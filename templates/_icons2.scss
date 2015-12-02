@@ -15,7 +15,7 @@ $fontPath:'<%= fontPath %>';
   url('#{$fontPath}iconfont.svg#gmIcon') format('svg'); /* iOS 4.1- */
 }
 
-.<%= fontName %>{
+.<%= cssClass %>{
   @include icon-font-base;
 }
 <% _.each(glyphs, function(glyph) { %>

@@ -106,7 +106,7 @@
     <ul class="icon_lists clear">
         <% _.each(glyphs, function(glyph) { %>
         <li>
-            <i class="icon <%= cssClass%>-<%= glyph.fileName %>"></i>
+            <i class="icon <%= cssClass%> <%= cssClass%>-<%= glyph.fileName %>"></i>
 
             <div class="fontclass">.<%= glyph.fileName %></div>
         </li>
