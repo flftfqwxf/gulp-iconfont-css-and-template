@@ -15,10 +15,12 @@ function iconfontCSSAndTemplate(config) {
         cssOutputFile,
         templateOutputFile,
         engine,
+        cssPathList = ['_icons.css', '_icons.less', '_icons.scss', '_icons2.scss'],
         cssClass;
     // Set default values
     config = _.merge({
         cssPath: 'css',
+        cssTemplatePath: '',
         cssTargetPath: '_icons.css',
         templatePath: 'demoTemplate.html',
         templateTargetPath: 'demoTemplate.html',
@@ -30,10 +32,14 @@ function iconfontCSSAndTemplate(config) {
     // Enable default stylesheet generators
     config.templatePath = __dirname + '/templates/' + config.templatePath;
     if (!config.cssPath) {
-        config.cssPath = 'scss';
+        config.cssPath = '_icons';
     }
     if (/^(scss|less|css)$/i.test(config.cssPath)) {
         config.cssPath = __dirname + '/templates/_icons.' + config.cssPath;
+    }
+    if (config.cssTemplatePath) {
+       var cssTemplatePath=path.normalize(config.cssTemplatePath);
+        config.cssPath=config.cssTemplatePath;
     }
     // Validate config
     if (!config.fontName) {
@@ -76,7 +82,6 @@ function iconfontCSSAndTemplate(config) {
                 contents: file.isBuffer() ? new Buffer(0) : new Stream.PassThrough()
             });
         }
-
         currentCodePoint = currentGlyph.toString(16).toUpperCase();
         // Add glyph
         glyphMap.push({
@@ -85,11 +90,7 @@ function iconfontCSSAndTemplate(config) {
         });
         // Prepend codePoint to input file path for gulp-iconfont
         inputFilePrefix = 'u' + currentCodePoint + '-';
-
         file.path = path.dirname(file.path) + '/' + inputFilePrefix + path.basename(file.path);
-
-
-
         // Increase counter
         currentGlyph++;
         this.push(file);
@@ -100,12 +101,10 @@ function iconfontCSSAndTemplate(config) {
             //写入CSS
             console.log(config.cssPath);
             _createCss(cb);
-
         } else {
             cb();
         }
     };
-
     //写入css
     function _createCss(cb) {
         var content;
@@ -131,11 +130,12 @@ function iconfontCSSAndTemplate(config) {
                 _createHTMLDemo(cb);
             });
     }
+
     //写入模板
     function _createHTMLDemo(cb) {
-        var content,extname=path.extname(config.cssTargetPath),cssTargetPath=config.cssTargetPath;
-        if (extname==='.scss' || extname==='.less') {
-            cssTargetPath=config.cssTargetPath.substr(0,config.cssTargetPath.lastIndexOf(extname))+'.css';
+        var content, extname = path.extname(config.cssTargetPath), cssTargetPath = config.cssTargetPath;
+        if (extname === '.scss' || extname === '.less') {
+            cssTargetPath = config.cssTargetPath.substr(0, config.cssTargetPath.lastIndexOf(extname)) + '.css';
         }
         consolidate[config.engine](config.templatePath, {
                 glyphs: glyphMap,

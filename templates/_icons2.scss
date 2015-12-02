@@ -1,0 +1,25 @@
+@charset "utf-8";
+//字体ICON，所有字体图标都在此处管理
+$fontPath:'<%= fontPath %>';
+@mixin icon-font-base($size: 16px){
+  font-family: "<%= fontName %>" !important;
+  font-size: $size;
+  font-style: normal;
+}
+
+@font-face {font-family: "<%= fontName %>";
+  src: url('#{$fontPath}iconfont.eot'); /* IE9*/
+  src: url('#{$fontPath}iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('#{$fontPath}iconfont.woff') format('woff'), /* chrome、firefox */
+  url('#{$fontPath}iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('#{$fontPath}iconfont.svg#gmIcon') format('svg'); /* iOS 4.1- */
+}
+
+.<%= fontName %>{
+  @include icon-font-base;
+}
+<% _.each(glyphs, function(glyph) { %>
+  .<%= glyph.fileName %>:before {
+     content: "\<%= glyph.codePoint %>";
+}
+<% }); %>
