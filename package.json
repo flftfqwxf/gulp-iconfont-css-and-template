@@ -19,8 +19,14 @@
     "gulp": "~3.9.0",
     "gulp-iconfont": "^5.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flftfqwxf/gulp-iconfont-css-and-template.git"
+  },
+
   "author": {
-    "name": "leixianhua"
+    "name": "leixianhua",
+    "email": "120377576@qq.com"
   },
   "licenses": [
     {
