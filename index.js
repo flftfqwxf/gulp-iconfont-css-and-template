@@ -30,7 +30,7 @@ function iconfontCSSAndTemplate(config) {
         htmlTemplate:{
             templatePath: 'demoTemplate.html',
             templateTargetPath: 'demoTemplate.html',
-            templateTitle:'ICONFONT'
+            templateTitle:'ICONFONT 图标'
         }
     }, config);
     // Enable default stylesheet generators
