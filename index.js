@@ -26,7 +26,12 @@ function iconfontCSSAndTemplate(config) {
         fontPath: './',
         engine: 'lodash',
         firstGlyph: 0xE001,
-        cssClass: 'icon'
+        cssClass: 'icon',
+        htmlTemplate:{
+            templatePath: 'demoTemplate.html',
+            templateTargetPath: 'demoTemplate.html',
+            templateTitle:'ICONFONT'
+        }
     }, config);
     // Enable default stylesheet generators
     config.templatePath = __dirname + '/templates/' + config.templatePath;
@@ -142,7 +147,8 @@ function iconfontCSSAndTemplate(config) {
                 fontPath: config.fontPath,
                 cssClass: config.cssClass,
                 cssPath: config.cssPath,
-                cssTargetPath: cssTargetPath
+                cssTargetPath: cssTargetPath,
+                htmlTemplate:config.htmlTemplate
             },
             function (err, html) {
                 if (err) {
