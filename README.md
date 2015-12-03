@@ -1,8 +1,11 @@
 # gulp-iconfont-css-and-template
 ##基于gulp-iconfont和gulp-iconfont-css源码修改的组件，用于生成iconfont及字体图标及查看模板。解决生成的字体图标不方便查看的问题
-##之前几个版本代码发布错误，已修复，有问题请在GITHUB上提，会尽可能快的修复
-第一个可用版本：
 
+
+
+##第一个可用版本：
+
+##之前几个版本代码发布错误，已修复，有问题请在GITHUB上提，会尽可能快的修复
 
 ## Install
 
@@ -37,4 +40,3 @@ npm install --save-dev gulp-iconfont-css-and-template
 ```
 
 
-##使用文档后续完善
