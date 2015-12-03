@@ -12,24 +12,26 @@ npm install --save-dev gulp-iconfont-css-and-template
 ## Examples
 
 ```js
-var gulp = require('gulp');
-var iconfont=require('gulp-iconfont');
-var iconfontCssAndTemplate=require('gulp-iconfont-css-and-template');
-gulp.task('iconFontCssAndTemplate', function(){
-    gulp.src(['svg/**/*.svg'])
-        .pipe(iconfontCssAndTemplate({
-            fontName: fontName,
-            cssClass:'gmIcon',
-            cssTargetPath:'iconFont.css'
-        }))
-        .pipe(iconfont({
-            fontName: fontName,
-            formats: ['ttf', 'eot', 'woff','svg']
-        }))
-        .pipe(gulp.dest('dist'));
 
-});
-});
+    var gulp = require('gulp');
+    var iconfont=require('gulp-iconfont');
+    var iconfontCssAndTemplate=require('gulp-iconfont-css-and-template');
+    gulp.task('iconFontCssAndTemplate', function(){
+        gulp.src(['svg/**/*.svg'])
+            .pipe(iconfontCssAndTemplate({
+                fontName: fontName,
+                cssClass:'gmIcon',
+                cssTargetPath:'iconFont.css'
+            }))
+            .pipe(iconfont({
+                fontName: fontName,
+                formats: ['ttf', 'eot', 'woff','svg']
+            }))
+            .pipe(gulp.dest('dist'));
+    
+    });
+    });
+
 ```
 
 

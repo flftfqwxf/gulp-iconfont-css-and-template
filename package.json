@@ -8,7 +8,8 @@
   },
   "keywords": [
     "iconfont",
-    "iconfont-template"
+    "iconfont-template",
+    "iconfont-css"
   ],
   "dependencies": {
     "gulp-util": "~3.0.6",
@@ -28,6 +29,10 @@
     "name": "leixianhua",
     "email": "120377576@qq.com"
   },
+  "homepage": "https://github.com/flftfqwxf/gulp-iconfont-css-and-template",
+  "bugs": {
+    "url": "https://github.com/flftfqwxf/gulp-iconfont-css-and-template/issues"
+  },
   "licenses": [
     {
       "type": "MIT"
@@ -37,7 +42,7 @@
     "README.md",
     "index.js"
   ],
-  "_id": "gulp-iconfont-template@1.0.1",
+  "_id": "gulp-iconfont-template@1.0.12",
   "_shasum": "5ba60d4fcbed6daf101f5beec1f52477aabb3fdb",
   "_from": "gulp-iconfont-template@*"
 }
