@@ -3,8 +3,7 @@ var path = require('path'),
     gutil = require('gulp-util'),
     consolidate = require('consolidate'),
     _ = require('lodash'),
-    Stream = require('stream'),
-    co = require('co');
+    Stream = require('stream');
 var PLUGIN_NAME = 'gulp-iconfont-css-and-template';
 function iconfontCSSAndTemplate(config) {
     var glyphMap = [],
