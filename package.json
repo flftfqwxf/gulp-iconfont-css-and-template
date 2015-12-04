@@ -1,6 +1,6 @@
 {
   "name": "gulp-iconfont-css-and-template",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "基于gulp-iconfont和gulp-iconfont-css源码修改的组件，用于生成iconfont及字体图标及查看模板。解决生成的字体图标不方便查看的问题",
   "main": "index.js",
   "scripts": {
@@ -43,7 +43,7 @@
       "type": "MIT"
     }
   ],
-  "_id": "gulp-iconfont-template@1.0.20",
+  "_id": "gulp-iconfont-template@1.0.21",
   "_shasum": "5ba60d4fcbed6daf101f5beec1f52477aabb3fdb",
   "_from": "gulp-iconfont-template@*"
 }
