@@ -5,8 +5,6 @@
 
 ##第一个可用版本：
 
-##之前几个版本代码发布错误，已修复，有问题请在GITHUB上提，会尽可能快的修复
-
 ## Install
 
 Install with [npm](https://npmjs.org/package/gulp-iconfont-css-and-template).
